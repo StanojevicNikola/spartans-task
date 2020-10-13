@@ -1,0 +1,31 @@
+{
+  "name": "spartans-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "seed": "mongoimport --db spartans-task  --drop --collection ingredients --file dev-data/ingredients.json --jsonArray"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanojevicNikola/spartans-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StanojevicNikola/spartans-node/issues"
+  },
+  "homepage": "https://github.com/StanojevicNikola/spartans-node#readme",
+  "dependencies": {
+    "async": "^3.2.0",
+    "awilix": "^4.2.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

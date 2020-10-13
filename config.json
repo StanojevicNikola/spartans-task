@@ -1,0 +1,24 @@
+{
+    "port": 3000,
+    "storage": {
+        "mongodb": {
+        "url": "mongodb://localhost:27017/",
+        "database": "spartans-task"
+        }
+    },
+    "pizza": {
+        "small": {
+            "time": 1000,
+            "price": 200
+        },
+        "medium": {
+            "time": 2000,
+            "price": 400
+        }, 
+        "large": {
+            "time": 3000,
+            "price": 600
+        }
+    },
+    "step": 200
+}
