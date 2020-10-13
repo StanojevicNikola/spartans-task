@@ -41,6 +41,28 @@ class OrderController {
 
         return { time, price };
     }
+
+    async checkOrder(id) {
+        const orderStatus = await this.orderService.findOne(id);
+        if (orderStatus != null)
+            return orderStatus.status;
+        return 'not_existing';
+    }
+
+    async cancelOrder(id) {
+        const order = await this.orderService.findOne(id);
+        if (order == null)
+            return { msg: 'Order does not exist' };
+
+        const res = this.orderService.updateOne(id, { status: 'canceled' });
+        if (res != null)
+            return { msg: 'Order successfully canceled' };
+    }
+
+    async getRecentOrders() {
+        const orders = await this.orderService.findRecent();
+        return orders;
+    }
 }
 
 module.exports = OrderController;

@@ -26,7 +26,11 @@ const orderSchema = new mongoose.Schema({
         enum: ['served', 'processing', 'in_queue', 'canceled', 'rejected'],
         default: 'in_queue'
     },
-    size: {
+    ingredients: {
+        type: [String]
+    }
+    ,
+    pizzaSize: {
         type: String,
         enum: ['small', 'medium', 'large']
     },

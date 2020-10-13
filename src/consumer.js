@@ -23,7 +23,7 @@ class Consumer {
         this.reduceDuration();
         if (this.duration <= 0) {
             this.busy = false;
-            this.orderService.updateOne(this.order._id, { status: 'served ' });
+            this.orderService.updateOne(this.order._id, { status: 'served' });
             console.log('Pizza served!');
             return;
         }
