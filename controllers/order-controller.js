@@ -63,6 +63,19 @@ class OrderController {
         const orders = await this.orderService.findRecent();
         return orders;
     }
+
+    async getTopIngredients() {
+        const result = await this.orderService.findMostCommon();
+        return result;
+    }
+
+    async getMoneyEarned() {
+        const result = await this.orderService.getTotalMoney();
+        if (result.length === 0)
+            return { money: 0 }
+
+        return result[0];
+    }
 }
 
 module.exports = OrderController;
