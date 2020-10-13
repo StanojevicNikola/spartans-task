@@ -1,5 +1,5 @@
 {
-  "name": "spartans-node",
+  "name": "spartans-task",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StanojevicNikola/spartans-node.git"
+    "url": "git+https://github.com/StanojevicNikola/spartans-task.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/StanojevicNikola/spartans-node/issues"
+    "url": "https://github.com/StanojevicNikola/spartans-task/issues"
   },
-  "homepage": "https://github.com/StanojevicNikola/spartans-node#readme",
+  "homepage": "https://github.com/StanojevicNikola/spartans-task#readme",
   "dependencies": {
     "async": "^3.2.0",
     "awilix": "^4.2.6",
