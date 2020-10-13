@@ -69,6 +69,44 @@ class OrderService {
             }
         ]);
     }
+
+    async getWorkingTime(date) {
+        return Order.aggregate([
+            {
+                $match: {
+                    createdAt: { $gte: date },
+                    status: 'served'
+                },
+
+            },
+            {
+                $group: {
+                    _id: null,
+                    time: { $sum: '$totalDuration' }
+                }
+            },
+            {
+                $project: {
+                    _id: 0
+                }
+            }
+        ]);
+    }
+
+    async getHistory() {
+        return Order
+            .find()
+            .select({
+                'status': 0,
+                'pizzaSize': 0,
+                'totalDuration': 0,
+                'timeLeft': 0,
+                'orderNumber': 0,
+                '_id': 0,
+                '__v': 0
+            });
+    }
+
 }
 
 module.exports = OrderService;
