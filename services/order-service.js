@@ -25,6 +25,50 @@ class OrderService {
     async getOrderNumber() {
         return Order.count({ status: 'in_queue' });
     }
+
+    async findMostCommon() {
+        return Order.aggregate([
+            {
+                $unwind: '$ingredients'
+            },
+            {
+                $group: {
+                    _id: '$ingredients',
+                    numOrders: { $sum: 1 }
+                }
+            },
+            {
+                $addFields: { name: '$_id' }
+            },
+            {
+                $project: {
+                    _id: 0
+                }
+            },
+            {
+                $sort: { numOrders: -1 }
+            },
+            {
+                $limit: 5
+            }
+        ]);
+    }
+
+    async getTotalMoney() {
+        return Order.aggregate([
+            {
+                $group: {
+                    _id: null,
+                    money: { $sum: '$price' }
+                }
+            },
+            {
+                $project: {
+                    _id: 0
+                }
+            }
+        ]);
+    }
 }
 
 module.exports = OrderService;

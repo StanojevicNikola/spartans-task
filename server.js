@@ -50,6 +50,21 @@ class Server {
         })
 
 
+        app.get('/admin/top-5-ingredients', async (req, res) => {
+            const result = await this.orderController.getTopIngredients();
+            res.json(result);
+        });
+
+        app.get('/admin/total-money-earned', async (req, res) => {
+            const result = await this.orderController.getMoneyEarned();
+            res.json(result);
+        });
+
+
+        app.get('/admin/uptime', async (req, res) => {
+            res.json({ secondsSinceLastStart: process.uptime() });
+        })
+
         app.listen(port, () => {
             console.log('Listening');
         });
