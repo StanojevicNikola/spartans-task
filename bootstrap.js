@@ -2,6 +2,7 @@ const awilix = require('awilix');
 const cron = require('node-cron');
 
 const server = require('./server');
+const app = require('./app');
 const consumer = require('./src/consumer');
 const broker = require('./src/broker');
 const orderQueue = require('./src/order-queue');
@@ -30,6 +31,7 @@ class Bootstrap {
         );
 
         this.container.register({
+            app: awilix.asClass(app).singleton(),
             config: awilix.asValue(config),
             orderQueue: awilix.asClass(orderQueue).singleton(),
             broker: awilix.asClass(broker).singleton(),

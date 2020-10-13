@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "7dc97147-b1b8-47dc-9277-26c921d9d024",
+		"name": "spartans-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Stefan\",\n    \"lastName\": \"Stefanovic\",\n    \"address\": \"Novi Beograd 11000\",\n    \"phoneNumber\": \"0631609804\",\n    \"ingredients\": [\"pineapple\", \"bacon\"],\n    \"pizzaSize\": \"medium\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/order/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recent Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/order/recent",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"recent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Order Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/order/check/5f85f9e3ac9aac24db9921e8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"check",
+						"5f85f9e3ac9aac24db9921e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/order/cancel/5f85f9e3ac9aac24db9921e8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"cancel",
+						"5f85f9e3ac9aac24db9921e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Work Time Since Last Start",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/session-work-time",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"session-work-time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Total Money Earned",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/total-money-earned",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"total-money-earned"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top 5 Ingredients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/top-5-ingredients",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"top-5-ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/admin/history",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
