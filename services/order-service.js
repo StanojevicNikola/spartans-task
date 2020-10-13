@@ -18,6 +18,10 @@ class OrderService {
         return Order.find(query).sort('-createdAt');
     }
 
+    async findRecent() {
+        return Order.find().sort('-createdAt').select({ 'ingredients': 1, 'pizzaSize': 1, '_id': 0 }).limit(20);
+    }
+
     async getOrderNumber() {
         return Order.count({ status: 'in_queue' });
     }
