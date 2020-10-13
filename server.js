@@ -1,17 +1,14 @@
-const express = require('express');
-const order = require('./models/order');
-const port = 3000;
-
 class Server {
 
-    constructor({ app }) {
+    constructor({ app, config }) {
         this.app = app;
+        this.config = config;
     }
 
     start() {
 
-        this.app.app.listen(port, () => {
-            console.log(`Server is running on port ${port}`);
+        this.app.app.listen(this.config.port, () => {
+            console.log(`Server is running on port ${this.config.port}`);
         });
     }
 }
